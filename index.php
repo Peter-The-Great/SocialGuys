@@ -21,10 +21,10 @@ if(isset($_SESSION["loggedin"])) {
         <div class="login-box mx-auto shadow p-3 mb-5 bg-white rounded">
             <!-- Shadow, Center in the middle of screen -->
             <!-- Logo-->
-            <center><img src="../images/logo.png"></center>
+            <center><img src="img/logo.png"></center>
             <h4 class="card-title mb-4 mt-1">Inloggen</h4>
             <!-- Forum Itself -->
-            <form method="POST" action="../php/login/authenticate.php">
+            <form method="POST" action="php/auth.php">
                 <div class="form-group">
                     <label>Gebruikersnaam</label>
                     <input name="username" id="username" class="form-control" placeholder="Gebruikersnaam" type="username">
