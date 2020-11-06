@@ -1,6 +1,6 @@
 body {
-    background: url("../images/header.png") no-repeat center center fixed;
-    background-size: cover;
+    /*background: url("") no-repeat center center fixed;
+    background-size: cover;*/
 }
 .login-box {
     background-color: white;
@@ -20,7 +20,6 @@ img {
     max-height: 120px;
     text-align: center;
 }
-
 a {
     color: #343a40 !important;
 }
@@ -54,7 +53,7 @@ a {
 }
 
 .delimiter {
-  padding: 1rem;  
+  padding: 1rem;
 }
 
 .social-buttons {
