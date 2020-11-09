@@ -1,7 +1,7 @@
 <?php 
   if (isset($_POST['accountMaken'])) 
   {
-    require 'config.php';
+    require('database.php');
     
     //de post variables van alle inputs
     $gebruikersnaam = $_POST['Naam'];
@@ -10,11 +10,15 @@
     $categorie = $_POST['categorie'];
     //escape strings
     $username = $gebruikersnaam;
-    $username = mysqli_real_escape_string($mysql, $username);
+    $username = mysqli_real_escape_string($conn, $username);
     
     $password = $wachtwoord;
-    $password = mysqli_real_escape_string($mysql, $password);
-    
+    $password = mysqli_real_escape_string($conn, $password);
+    if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $email)) 
+    {
+      $foutmelding .= "<p>E-Mail address is not valid!</p>";
+      echo $foutmelding;
+    }
     //je kan dit niet gebruiken bij een email want dan werkt de preg_match function niet meer omdat
     // ie de speciale karakters weg haalt en dan niet meer de rest van de email heeft.
     // $e_mail = $email;
@@ -23,21 +27,16 @@
     // get details of the uploaded file
     $fileTmpPath = $_FILES['profiel']['tmp_name'];
     $fileName = $_FILES['profiel']['name'];
-    $path = "uploads/".$fileName;
+    $path = "../uploads/".$fileName;
     $file1 = explode(".",$fileName);
     //foutmelding die in de else dingen word gebruikt
     $foutmelding = "";
     //de query om de data in de db te stoppen
-    $query = "INSERT INTO `kanaal`(`ProfielPhoto`, `Naam`, `Email`, `Password`, `CategorieID`) 
-    VALUES ('$fileName', '$username', '$email', '$password', '$categorie')";
+    $query = "INSERT INTO `kanaal`(`Kanaal_ID`,`ProfielPhoto`, `Naam`, `Email`, `Password`, `CategorieID`) 
+    VALUES (NULL,'$fileName', '$username', '$email', '$password', '$categorie')";
     //check of de email echt een email is
-    if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $email)) 
-    {
-      $foutmelding .= "<p>E-Mail address is not valid!</p>";
-      echo $foutmelding;
-    }
-    var_dump($fileName);
-    var_dump($email);
+    //var_dump($fileName);
+    //var_dump($email);
     //check of de fileextensions hetzelfde zijn als in de array
     if ($_FILES['profiel']['type'] == 'image/jpg' ||
         $_FILES['profiel']['type'] == 'image/jpeg' ||
@@ -53,13 +52,12 @@
           strlen($fileName) > 0) 
       {
           //voer de query uit
-          $result = mysqli_query($mysql, $query);
+          $result = $conn->query($query);
           $uploaded = move_uploaded_file($fileTmpPath, $path);
           
           if ($result && $uploaded) 
           {
-            header("location: account_maken.php");
-            exit;
+            header("location: ../account_maken.php");
           } else 
           {
             $foutmelding .= "<p>ERROR: Something went wrong!</p>";

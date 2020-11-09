@@ -5,34 +5,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
-            <?php
-            if (isset($_SESSION['rol']) && $_SESSION['rol'] == "student") { // If user is studentt
-                echo "
                 <li class='nav-item'>
                 <a class='nav-link' href='dashboard_student.php'>Home</span></a>
                 </li>
                 <li class='nav-item'>
                 <a class='nav-link' href='logout.php'>logout</a>
                 </li>
-                ";
-            }
-            else if(isset($_SESSION['rol']) && $_SERVER['SCRIPT_NAME']=="/Stage-Website/php/student_inzien.php" && $_SESSION['rol'] == "leraar"){
-                echo "<li class='nav-item'>
-                <a class='nav-link' href='../dashboard_docent.php'>Home</span></a>
-                </li>
-                <li class='nav-item'>
-                <a class='nav-link' href='../logout.php'>logout</a>
-                </li>";
-            }
-            else if(isset($_SESSION['rol']) && $_SESSION['rol'] == "leraar"){
-                echo "<li class='nav-item'>
-                <a class='nav-link' href='dashboard_docent.php'>Home</span></a>
-                </li>
-                <li class='nav-item'>
-                <a class='nav-link' href='logout.php'>logout</a>
-                </li>";
-            }
-            ?>
         </ul>
     </div>
 </nav>
