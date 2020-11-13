@@ -1,10 +1,10 @@
 <?php
-session_start();
-if(isset($_SESSION["loggedin"])) {
-    header("Location: dashboard.php");
-}
+// session_start();
+// if(isset($_SESSION["loggedin"])) {
+//     header("Location: dashboard.php");
+// }
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,12 +23,7 @@ if (!isset($_SESSION['loggedin'])) { // If user hasn't logged
   require('components/login.php');
 }
 ?>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/fontawsome.js"></script>
+    <?php require("components/scripts.php");?>
 </body>
 
 </html>

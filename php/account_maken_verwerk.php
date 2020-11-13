@@ -14,6 +14,8 @@
     
     $password = $wachtwoord;
     $password = mysqli_real_escape_string($conn, $password);
+    $password = sha1($password);
+
     if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $email)) 
     {
       $foutmelding .= "<p>E-Mail address is not valid!</p>";
@@ -74,6 +76,4 @@
         echo $foutmelding;
     }
   }
-  
-  
  ?>

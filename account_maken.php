@@ -1,9 +1,9 @@
 <?php
 session_start();
 if(isset($_SESSION["loggedin"])) {
-    header("Location: dashboard.php");
+    header("Location: ../kanaal.php");
 }
-  require('../database.php');
+  require('php/database.php');
   //query om de categorien te vinden in de database
   $query = "SELECT * FROM `categorie`";
   
@@ -15,16 +15,21 @@ if(isset($_SESSION["loggedin"])) {
    <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
      <?php require_once("components/head.php"); ?>
      <title>Account Maken</title>
    </head>
    <body>
    <?php require("components/navigation.php");?>
      <form action="php/account_maken_verwerk.php" method="POST" enctype="multipart/form-data">
-       Username:<input type="text" name="Naam"><br>
-       Email:<input type="text" name="Email"><br>
-       Password:<input type="password" name="password" value=""><br>
-       Categorie:<select name="categorie"><br>
+       <label>Username:<label>
+       <input type="text" required name="Naam"><br>
+       <lable>Email:</label>
+       <input type="text" name="Email" required><br>
+       <label>Password:</label>
+       <input type="password" required name="password"><br>
+       <label>Categorie:</label><select name="categorie">
+       <option selected disabled>-- Select here --</option>
          <?php 
             foreach($result as $catagorie)
             {
@@ -34,9 +39,13 @@ if(isset($_SESSION["loggedin"])) {
             }
           ?>
        </select><br>
-       Profile photo<input type="file" name="profiel" ><br>
+       <label>Profile photo</label><input type="file" name="profiel"><br>
        <input type="submit" name="accountMaken" value="Sign Up">
-       <input type="submit" onclick="history.back(); return;" value="Cancel">
+       <input type="submit" onclick="window.history.back(); return;" value="Cancel">
+       <?php
+       require('components/footer.php'); 
+       require('components/scripts.php');
+       ?>
      </form>
    </body>
  </html>

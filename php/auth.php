@@ -14,7 +14,7 @@
             $stmt->fetch();
             
             $pswrd = $_POST["password"];
-            if (md5($pswrd) == $password) {
+            if (sha1($pswrd) == $password) {
                 $_SESSION["email"] = $email;
                 $_SESSION['userid'] = $id;
                 $_SESSION['username'] = $username;

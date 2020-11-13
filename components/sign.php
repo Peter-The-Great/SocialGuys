@@ -5,7 +5,7 @@
             <center><img class="rounded" type="image/svg+xml" style="max-width: 20%; height:auto;" src="img/logo.svg"></center>
             <h4 class="card-title mb-4 mt-1">Sign in</h4>
             <!-- Forum Itself -->
-            <form method="POST" action="php/auth.php">
+            <form method="POST" action="php/kanaalaanmaken.php">
                 <div class="form-group">
                     <input type="mail" name="email" class="form-control" id="email" placeholder="someone45@gmial.com">
                 </div>
@@ -14,12 +14,15 @@
                 <input type="file" class="form-control-file" id="image" name="image">
                 </div>
                 <div class="form-group">
-                <label>Select your favourite type of content</label>
-                    <select class="form-control">
-                    <option selected disabled>-- select here --</option>
-                    <option>Tournements</option>
-                    <option>SpeedRun</option>
-                    </select>
+                  <label>Select your favourite type of content</label>
+                      <select name="content" class="form-control">
+                        <option selected disabled>-- Select here --</option>
+                        <option value="Speedruns" >Speedruns</option>
+                        <option value="Lets play">Let's play</option>
+                        <option value="Trailers">Trailers</option>
+                        <option value="Walkthroughs">Walkthroughs</option>
+                        <option value="Commentary">Commentary</option>
+                      </select>
                 </div>
                 <div class="form-group">
                     <label>Username</label>
