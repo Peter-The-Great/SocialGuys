@@ -43,7 +43,6 @@ if(isset($_SESSION["loggedin"])) {
        <input type="submit" name="accountMaken" value="Sign Up">
        <input type="submit" onclick="window.history.back(); return;" value="Cancel">
        <?php
-       require('components/footer.php'); 
        require('components/scripts.php');
        ?>
      </form>

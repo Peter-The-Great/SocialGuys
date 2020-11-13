@@ -1,0 +1,15 @@
+.bg-twitch{
+    background-color:#18181b!important;
+}
+a.bg-twitch:focus,a.bg-twitch:hover,button.bg-twitch:focus,button.bg-twitch:hover{
+    background-color:#18181b!important;
+}
+.bg-back{
+    background-color:#0e0e10!important;
+}
+a.bg-back:focus,a.bg-back:hover,button.bg-back:focus,button.bg-back:hover{
+    background-color:#0e0e10!important;
+}
+.text-blank{
+    color:  #efeff1 !important;
+}

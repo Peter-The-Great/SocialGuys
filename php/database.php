@@ -1,12 +1,12 @@
 <?php
 ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+//ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
     $user = 'root';
     $pass = '';
-    $db = 'social guys';
-    $host = '127.0.0.1:8080';
+    $db = 'socialguys';
+    $host = '127.0.0.1';
     
     //Create connection
     $conn = new mysqli($host, $user, $pass, $db) or die("Unable to connect");

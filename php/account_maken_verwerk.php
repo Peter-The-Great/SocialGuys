@@ -15,12 +15,7 @@
     $password = $wachtwoord;
     $password = mysqli_real_escape_string($conn, $password);
     $password = sha1($password);
-
-    if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $email)) 
-    {
-      $foutmelding .= "<p>E-Mail address is not valid!</p>";
-      echo $foutmelding;
-    }
+    
     //je kan dit niet gebruiken bij een email want dan werkt de preg_match function niet meer omdat
     // ie de speciale karakters weg haalt en dan niet meer de rest van de email heeft.
     // $e_mail = $email;
@@ -39,6 +34,11 @@
     //check of de email echt een email is
     //var_dump($fileName);
     //var_dump($email);
+    if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $email)) 
+    {
+      $foutmelding .= "<p>E-Mail address is not valid!</p>";
+      echo $foutmelding;
+    }
     //check of de fileextensions hetzelfde zijn als in de array
     if ($_FILES['profiel']['type'] == 'image/jpg' ||
         $_FILES['profiel']['type'] == 'image/jpeg' ||
@@ -59,7 +59,7 @@
           
           if ($result && $uploaded) 
           {
-            header("location: ../account_maken.php");
+            header("location: ../index.php");
           } else 
           {
             $foutmelding .= "<p>ERROR: Something went wrong!</p>";

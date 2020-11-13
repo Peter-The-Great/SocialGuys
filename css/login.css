@@ -1,129 +1,129 @@
 body {
-    /*background: url("") no-repeat center center fixed;
-    background-size: cover;*/
+  /*background: url("") no-repeat center center fixed;
+  background-size: cover;*/
 }
 .login-box {
-    background-color: white;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-top: 18vh;
-    width: 50%;
+  background-color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 18vh;
+  width: 50%;
 }
 .register-box {
-    background-color: white;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-top: 8vh;
-    width: 50%;
+  background-color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 8vh;
+  width: 50%;
 }
 img {
-    max-height: 120px;
-    text-align: center;
+  max-height: 50px;
+  text-align: center;
 }
 a {
-    color: #343a40 !important;
+  color: #343a40 !important;
 }
 
 fieldset {
-    display: none
+  display: none
 }
 
 fieldset.show {
-    display: block
+  display: block
 }
 
 select:focus,
 input:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    border: 1px solid #2196F3 !important;
-    outline-width: 0 !important;
-    font-weight: 400
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #2196F3 !important;
+  outline-width: 0 !important;
+  font-weight: 400
 }
 
 button:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    outline-width: 0
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0
 }
 
 .tabs {
-    margin: 2px 5px 0px 5px;
-    padding-bottom: 10px;
-    cursor: pointer
+  margin: 2px 5px 0px 5px;
+  padding-bottom: 10px;
+  cursor: pointer
 }
 
 .tabs:hover,
 .tabs.active {
-    border-bottom: 1px solid #2196F3
+  border-bottom: 1px solid #2196F3
 }
 
 a:hover {
-    text-decoration: none;
-    color: #1565C0
+  text-decoration: none;
+  color: #1565C0
 }
 
 .box {
-    margin-bottom: 10px;
-    border-radius: 5px;
-    padding: 10px
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 10px
 }
 
 .modal-backdrop {
-    background-color: #64B5F6
+  background-color: #64B5F6
 }
 
 .line {
-    background-color: #CFD8DC;
-    height: 1px;
-    width: 100%
+  background-color: #CFD8DC;
+  height: 1px;
+  width: 100%
 }
 
 @media screen and (max-width: 768px) {
-    .tabs h6 {
-        font-size: 12px
-    }
+  .tabs h6 {
+      font-size: 12px
+  }
 }
 
 .container {
-  padding: 2rem 0rem ;
+padding: 2rem 0rem ;
 }
 
 @media (min-width: 576px){
-  .modal-dialog {
-    max-width: 400px;
-  }
-  .modal-content {
-    padding: 1rem;
-  }
+.modal-dialog {
+  max-width: 400px;
+}
+.modal-content {
+  padding: 1rem;
+}
 }
 
 .modal-header {
-  .close {
-    margin-top: -1.5rem;
-  }
+.close {
+  margin-top: -1.5rem;
+}
 }
 
 .form-title {
-  margin: -2rem 0rem 2rem;
+margin: -2rem 0rem 2rem;
 }
 
 .btn-round {
-  border-radius: 3rem;
+border-radius: 3rem;
 }
 
 .delimiter {
-  padding: 1rem;
+padding: 1rem;
 }
 
 .social-buttons {
-  .btn {
-    margin: 0 0.5rem 1rem;
-  }
+.btn {
+  margin: 0 0.5rem 1rem;
+}
 }
 
 .signup-section {
-  padding: 0.3rem 0rem;
+padding: 0.3rem 0rem;
 }

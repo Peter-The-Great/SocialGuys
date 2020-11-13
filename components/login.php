@@ -1,9 +1,7 @@
 <?php
-session_start();
 require('php/database.php');
   //query om de categorien te vinden in de database
   $query = "SELECT * FROM `categorie`";
-  
   //maak een resultaat door te verbinden met de database
   $result = $conn->query($query);
 ?>
@@ -25,11 +23,7 @@ require('php/database.php');
                         <fieldset id="tab011">
                           <div class="bg-light">
                                 <h5 class="text-center mb-4 mt-0 pt-4">Sign in</h5>
-                                <form method="POST" action="php/auth.php">
-                                    <div class="form-group">
-                                      <label>Email</label>
-                                        <input type="mail" name="email" class="form-control" id="email" placeholder="someone45@gmial.com">
-                                    </div>    
+                                <form method="POST" action="php/auth.php">    
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input name="username" id="username" class="form-control" placeholder="Peter857" type="text">
@@ -61,14 +55,22 @@ require('php/database.php');
                         <fieldset class="show" id="tab021">
                             <div class="bg-light">
                                 <h5 class="text-center mb-4 mt-0 pt-4">Sign up</h5>
-                                <form action="../php/account_maken_verwerk.php" method="POST" enctype="multipart/form-data">
-                                  <label>Username:<label>
-                                  <input type="text" required name="Naam"><br>
-                                  <lable>Email:</label>
-                                  <input type="text" name="Email" required><br>
-                                  <label>Password:</label>
-                                  <input type="password" required name="password"><br>
+                                <form action="php/account_maken_verwerk.php" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                        <label>Username</label>
+                                        <input name="Naam" id="username" class="form-control" placeholder="Peter857" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Email</label>
+                                        <input type="email" name="Email" class="form-control" id="email" placeholder="someone45@gmail.com">
+                                    </div> 
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input name="password" id="password" class="form-control" placeholder="********" type="password">
+                                    </div>
+                                    <div class="form-group">
                                   <label>Categorie:</label><select name="categorie">
+                                  <option selected disabled >Select Catagorie</option>
                                     <?php 
                                         foreach($result as $catagorie)
                                         {
@@ -78,9 +80,13 @@ require('php/database.php');
                                         }
                                       ?>
                                   </select><br>
-                                  <label>Profile photo</label><input type="file" name="profiel"><br>
-                                  <input type="submit" name="accountMaken" value="Sign Up">
-                                  <input type="submit" onclick="window.history.back(); return;" value="Cancel">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Profile photo</label><input type="file" name="profiel"><br>
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="submit" class="btn btn-dark btn-block" name="accountMaken" value="Sign up">
+                                  </div>
                                 </form>
                              </div>
                         </fieldset>
