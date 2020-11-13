@@ -61,10 +61,6 @@ require('php/database.php');
                                         <input name="Naam" id="username" class="form-control" placeholder="Peter857" type="text">
                                     </div>
                                     <div class="form-group">
-                                      <label>Email</label>
-                                        <input type="email" name="Email" class="form-control" id="email" placeholder="someone45@gmail.com">
-                                    </div> 
-                                    <div class="form-group">
                                         <label>Password</label>
                                         <input name="password" id="password" class="form-control" placeholder="********" type="password">
                                     </div>
@@ -97,8 +93,5 @@ require('php/database.php');
     </div>
 </div>
 </div>
-<?php 
-require('components/scripts.php');
-?>
 <script defer src="js/login.js"></script>
 </div>             
