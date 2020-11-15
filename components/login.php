@@ -5,8 +5,7 @@ require('php/database.php');
   //maak een resultaat door te verbinden met de database
   $result = $conn->query($query);
 ?>
-<div class="container">
-<div class="row justify-content-center"> <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-round">Click Here !</button> <!-- Modal-->
+<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-outline-info btn-round">Sign In</button> <!-- Modal-->
 <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
             <div role="document" class="modal-dialog">
                 <div class="modal-content">
@@ -23,12 +22,15 @@ require('php/database.php');
                         <fieldset id="tab011">
                           <div class="bg-light">
                                 <h5 class="text-center mb-4 mt-0 pt-4">Sign in</h5>
-                                <form method="POST" action="php/auth.php">    
+                                <form method="POST" action="php/auth.php">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input name="email" id="email" class="form-control" placeholder="Peter857@mail.com" type="email">
+                                    </div>
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input name="username" id="username" class="form-control" placeholder="Peter857" type="text">
                                     </div>
-                                    
                                     <div class="form-group">
                                         <label>Password</label>
                                         <input name="password" id="password" class="form-control" placeholder="********" type="password">
@@ -56,7 +58,11 @@ require('php/database.php');
                             <div class="bg-light">
                                 <h5 class="text-center mb-4 mt-0 pt-4">Sign up</h5>
                                 <form action="php/account_maken_verwerk.php" method="POST" enctype="multipart/form-data">
-                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input name="email" id="email" class="form-control" placeholder="Peter857@mail.com" type="email">
+                                    </div>
+                                    <div class="form-group">
                                         <label>Username</label>
                                         <input name="Naam" id="username" class="form-control" placeholder="Peter857" type="text">
                                     </div>
@@ -89,9 +95,5 @@ require('php/database.php');
                     </div>
                 </div>
             </div>
+            <script defer src="js/login.js"></script>
         </div>
-    </div>
-</div>
-</div>
-<script defer src="js/login.js"></script>
-</div>             

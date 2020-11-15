@@ -13,3 +13,9 @@ a.bg-back:focus,a.bg-back:hover,button.bg-back:focus,button.bg-back:hover{
 .text-blank{
     color:  #efeff1 !important;
 }
+.bg-acc{
+    background-color:#772ce8!important;
+}
+a.bg-acc:focus,a.bg-acc:hover,button.bg-acc:focus,button.bg-acc:hover{
+    background-color:#772ce8!important;
+}
