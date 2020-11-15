@@ -13,3 +13,6 @@ We werken met twee branches, een main branch voor de nieuwe versies en een voor 
 ## Eerste week v0.1
 Dit waren alle files die in de eerste week zijn gemaakt excl. de files die nog niet waren geimplementeerd.
 Want de files voor account maken moeten nog gechecked worden.
+## Tweede week v0.2
+Dit zijn alle files met de inlog pagina modal en de files voor het toevoegen van een video, alleen die moet 
+nog geimplementeerd worden.
