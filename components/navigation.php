@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-xl d-flex justify-content-between navbar-dark bg-twitch mb-4">
+<nav class="navbar navbar-expand-xl justify-content-between navbar-dark bg-twitch mb-4">
+    <span id="menu-toggle" style="cursor: pointer;" class="navbar-toggler-icon mr-3"></span>
     <a class="navbar-brand nav-item mr-auto" href="./">
     <img src="img/logo.png" class="img-fluid socialguys rounded" alt="Social Guys"> <no class="text-blank">Social Guys</no>
     </a>

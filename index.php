@@ -15,6 +15,19 @@ session_start();
 </head>
 
 <body class="bg-back">
+	<div class="d-flex" id="wrapper">
+	<div class="bg-twitch" id="sidebar-wrapper">
+		<div class="sidebar-heading text-white">Social Guys</div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Dashboard</a>
+        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Shortcuts</a>
+        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Overview</a>
+        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Events</a>
+        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Profile</a>
+        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Status</a>
+      </div>
+    </div>
+<div id="page-content-wrapper">
 <?php require("components/navigation.php");?>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -63,19 +76,8 @@ session_start();
       <span class="sr-only">Next</span>
     </a>
   </div>
-<div class="d-flex" id="wrapper">
-<div class="bg-twitch" id="sidebar-wrapper">
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Shortcuts</a>
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Events</a>
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Status</a>
-      </div>
-    </div>
 </div>
-
+</div>
 <?php require("components/scripts.php");?>
 </body>
 </html>
