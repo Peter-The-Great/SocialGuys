@@ -22,11 +22,7 @@ require('php/database.php');
                         <fieldset id="tab011">
                           <div class="bg-light">
                                 <h5 class="text-center mb-4 mt-0 pt-4">Sign in</h5>
-                                <form method="POST" action="php/auth.php">
-                                    <div class="form-group">
-                                        <label>Email</label>
-                                        <input name="email" id="email" class="form-control" placeholder="Peter857@mail.com" type="email">
-                                    </div>
+                                <form method="POST" action="php/inlog_verwerk.php">
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input name="username" id="username" class="form-control" placeholder="Peter857" type="text">
@@ -59,10 +55,6 @@ require('php/database.php');
                                 <h5 class="text-center mb-4 mt-0 pt-4">Sign up</h5>
                                 <form action="php/account_maken_verwerk.php" method="POST" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        <input name="email" id="email" class="form-control" placeholder="Peter857@mail.com" type="email">
-                                    </div>
-                                    <div class="form-group">
                                         <label>Username</label>
                                         <input name="Naam" id="username" class="form-control" placeholder="Peter857" type="text">
                                     </div>
@@ -71,7 +63,7 @@ require('php/database.php');
                                         <input name="password" id="password" class="form-control" placeholder="********" type="password">
                                     </div>
                                     <div class="form-group">
-                                  <label>Categorie:</label><select name="categorie">
+                                  <label>Categorie:</label><select class="form-control" name="categorie">
                                   <option selected disabled >Select Catagorie</option>
                                     <?php 
                                         foreach($result as $catagorie)
@@ -81,10 +73,10 @@ require('php/database.php');
                                           echo "</option>";
                                         }
                                       ?>
-                                  </select><br>
+                                  </select>
                                   </div>
                                   <div class="form-group">
-                                    <label>Profile photo</label><input type="file" name="profiel"><br>
+                                    <label>Profile photo</label><input class="form-control-file" type="file" name="profiel"><br>
                                   </div>
                                   <div class="form-group">
                                       <input type="submit" class="btn btn-dark btn-block" name="accountMaken" value="Sign up">

@@ -1,3 +1,8 @@
+@charset "UTF-8";
+img.socialguys {
+    max-height: 70px;
+    text-align: center;
+}
 .bg-twitch{
     background-color:#18181b!important;
 }
@@ -19,3 +24,112 @@ a.bg-back:focus,a.bg-back:hover,button.bg-back:focus,button.bg-back:hover{
 a.bg-acc:focus,a.bg-acc:hover,button.bg-acc:focus,button.bg-acc:hover{
     background-color:#772ce8!important;
 }
+#wrapper {
+  overflow-x: hidden!important;
+}
+
+#sidebar-wrapper {
+min-height: 100vh!important;
+margin-left: -15rem;
+-webkit-transition: margin .25s ease-out!important;
+-moz-transition: margin .25s ease-out!important;
+-o-transition: margin .25s ease-out!important;
+transition: margin .25s ease-out!important;
+}
+
+#sidebar-wrapper .sidebar-heading {
+padding: 0.875rem 1.25rem;
+font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+width: 15rem;
+}
+
+#page-content-wrapper {
+min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+margin-left: 0;
+}
+
+@media (min-width: 768px) {
+#sidebar-wrapper {
+  margin-left: 0;
+}
+
+#page-content-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: -15rem;
+}
+}
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+/* Werk niet hieronder dit is nog een test fase.
+#wrapper {
+    overflow-x: hidden;
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+*/

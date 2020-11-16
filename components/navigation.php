@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-xl d-flex justify-content-between navbar-dark bg-twitch mb-4">
     <a class="navbar-brand nav-item mr-auto" href="./">
-    <img src="img/logo.png" class="img-fluid rounded" alt="Social Guys"> <no class="text-blank">Social Guys</no>
+    <img src="img/logo.png" class="img-fluid socialguys rounded" alt="Social Guys"> <no class="text-blank">Social Guys</no>
     </a>
     <form class="form-inline mx-4 my-3">
     <input class="form-control mr-sm-2" type="search" size="40" placeholder="Search" aria-label="Search">
