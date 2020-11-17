@@ -43,6 +43,8 @@
       </select>
       <p>Video file:</p>
       <input type="file" name="video" ><br>
+      <p>Thumbnail:</p>
+      <input type="file" name="thumbnail" ><br>
       <input type="submit" name="uploaden" value="Upload">
     </form>
   </body>
