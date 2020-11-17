@@ -15,54 +15,41 @@ session_start();
 </head>
 
 <body class="bg-back">
-	<div class="d-flex" id="wrapper">
-	<div class="bg-twitch" id="sidebar-wrapper">
-		<div class="sidebar-heading text-white">Social Guys</div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Shortcuts</a>
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Events</a>
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Status</a>
-      </div>
-    </div>
-<div id="page-content-wrapper">
+	<div class="d-flex">
+    <?php require("components/sidebar.php");?>
+    <div id="page-content-wrapper">
 <?php require("components/navigation.php");?>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="ml-5 mr-5 mt-5 carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li></a>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h1>Example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+      <img class="img-fluid w-100" src="uploads/Thumbnail/mario.png" alt="First slide">
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            <a href="index.php" class="text-light"><h1>Super mario Odyssey</h1>
+            <p>Cool mario game</p></a>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+      <img class="img-fluid w-100" src="uploads/Thumbnail/minecraft.png" alt="First slide">
         <div class="container">
-          <div class="carousel-caption text-right">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+          <div class="carousel-caption text-light">
+            <a href="index.php" class="text-light"><h1>Minecraft Java</h1>
+            <p>Download minecraft today to join us and get a 50% discount on purchase</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+      <img class="img-fluid w-100" src="uploads/Thumbnail/zelda.png" alt="First slide">
+        <div class="container">
+          <div class="carousel-caption text-light">
+            <a href="index.php" class="text-light"><h1>Breath of the wild 2</h1>
+            <p>The new zelda game is coming out are you excited</p></a>
           </div>
         </div>
       </div>

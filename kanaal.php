@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 <?php
   require 'php/database.php';
 
   //zoek de id in de url
-  $id = $_GET['id'];
+  $id = 1;
 
   //query voor de om de video op te halen
   $query = "SELECT * FROM video WHERE KanaalID = ". $id;
@@ -66,7 +65,6 @@
     echo $foutmelding;
   }
  ?>
-=======
 <?php
   require 'php/database.php';
 
@@ -154,4 +152,3 @@
 <?php require("components/scripts.php");?>
 </body>
 </html>
->>>>>>> feature-video-toevoegen

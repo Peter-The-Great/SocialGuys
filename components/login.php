@@ -1,5 +1,4 @@
 <?php
-session_start();
 require('php/database.php');
   //query om de categorien te vinden in de database
   $query = "SELECT * FROM `categorie`";
@@ -23,23 +22,16 @@ require('php/database.php');
                         <fieldset id="tab011">
                           <div class="bg-light">
                                 <h5 class="text-center mb-4 mt-0 pt-4">Sign in</h5>
-<<<<<<< HEAD
                                 <form method="POST" action="php/inlog_verwerk.php">
-=======
                                 <form method="POST" action="php/login_verwerk.php">
                                     <div class="form-group">
                                       <label>Email</label>
                                         <input type="mail" name="email" class="form-control" id="email" placeholder="someone45@gmail.com">
                                     </div>
->>>>>>> feature-video-toevoegen
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input name="username" id="username" class="form-control" placeholder="Peter857" type="text">
                                     </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> feature-video-toevoegen
                                     <div class="form-group">
                                         <label>Password</label>
                                         <input name="password" id="password" class="form-control" placeholder="********" type="password">
@@ -104,17 +96,4 @@ require('php/database.php');
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-            <script defer src="js/login.js"></script>
         </div>
-=======
-        </div>
-    </div>
-</div>
-</div>
-<?php
-require('components/scripts.php');
-?>
-<script defer src="js/login.js"></script>
-</div>
->>>>>>> feature-video-toevoegen

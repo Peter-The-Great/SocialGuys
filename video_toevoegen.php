@@ -43,11 +43,8 @@
       </select>
       <p>Video file:</p>
       <input type="file" name="video" ><br>
-<<<<<<< HEAD
       <p>Thumbnail:</p>
       <input type="file" name="thumbnail" ><br>
-=======
->>>>>>> feature-video-toevoegen
       <input type="submit" name="uploaden" value="Upload">
     </form>
   </body>
