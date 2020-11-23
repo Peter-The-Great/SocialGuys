@@ -49,7 +49,10 @@
     //   $foutmelding .= "ERROR: your channel ID does not match!";
     //   echo $foutmelding;
     // }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     //checked of de thumbnail een foto file is
     if ($_FILES['thumbnail']['type'] != 'image/jpg' ||
         $_FILES['thumbnail']['type'] != 'image/jpeg' ||
@@ -76,7 +79,10 @@
         $_FILES['video']['type'] == 'video/mov')
     {
       //checked of alle velden zijn ingevuld
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
       if (strlen($title) > 0 ||
           strlen($tcategorie) > 0 ||
           strlen($kanaalID) > 0 ||
@@ -88,8 +94,11 @@
         $uploadedThumbnail = move_uploaded_file($fileTmpPathThumbnail, $pathThumbnail);
 
         if ($result && $uploaded && $uploadedThumbnail)
+<<<<<<< HEAD
 
         if ($result && $uploaded)
+=======
+>>>>>>> main
         {
           header("location: ../video_toevoegen.php");
           exit;
