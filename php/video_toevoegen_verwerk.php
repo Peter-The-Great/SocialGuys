@@ -28,7 +28,6 @@
     $fileTmpPath = $_FILES['video']['tmp_name'];
     $fileName = $_FILES['video']['name'];
     $path = "../uploads/videos/".$fileName;
-<<<<<<< HEAD
     $fileTmpPathThumbnail = $_FILES['thumbnail']['tmp_name'];
     $fileNameThumbnail = $_FILES['thumbnail']['name'];
     $pathThumbnail = "../uploads/thumbnails/".$fileNameThumbnail;
@@ -39,7 +38,6 @@
 
     //een check om te kijken of de hidden id in de form van het toevoegen hetzelfde is als de id van de session
     // if ($kanaalID != $id)
-=======
     $file1 = explode(".",$fileName);
 
     //foutmelding die in de else dingen word gebruikt
@@ -47,13 +45,11 @@
     
     //een check om te kijken of de hidden id in de form van het toevoegen hetzelfde is als de id van de session
     // if ($kanaalID != $id) 
->>>>>>> feature-video-toevoegen
     // {
     //   $foutmelding .= "ERROR: your channel ID does not match!";
     //   echo $foutmelding;
     // }
 
-<<<<<<< HEAD
     //checked of de thumbnail een foto file is
     if ($_FILES['thumbnail']['type'] != 'image/jpg' ||
         $_FILES['thumbnail']['type'] != 'image/jpeg' ||
@@ -70,21 +66,17 @@
               VALUES ('$title','$fileName', '$fileNameThumbnail', '$categorie','$kanaalID')";
 
     //checked of de video file word geaccepteerd in de mime
-=======
     //de query om het in de db te opslaan
     $query = "INSERT INTO `video`(`Naam`, `File`, `CategorieID`, `KanaalID`) VALUES ('$title','$fileName','$categorie','$kanaalID')";
     
->>>>>>> feature-video-toevoegen
     if ($_FILES['video']['type'] == 'video/mpeg' ||
         $_FILES['video']['type'] == 'video/ogg' ||
         $_FILES['video']['type'] == 'video/webm' ||
         $_FILES['video']['type'] == 'video/mp4' ||
         $_FILES['video']['type'] == 'video/mov')
     {
-<<<<<<< HEAD
       //checked of alle velden zijn ingevuld
-=======
->>>>>>> feature-video-toevoegen
+
       if (strlen($title) > 0 ||
           strlen($tcategorie) > 0 ||
           strlen($kanaalID) > 0 ||
@@ -93,14 +85,11 @@
         //voer de query uit
         $result = mysqli_query($conn, $query);
         $uploaded = move_uploaded_file($fileTmpPath, $path);
-<<<<<<< HEAD
         $uploadedThumbnail = move_uploaded_file($fileTmpPathThumbnail, $pathThumbnail);
 
         if ($result && $uploaded && $uploadedThumbnail)
-=======
 
         if ($result && $uploaded)
->>>>>>> feature-video-toevoegen
         {
           header("location: ../video_toevoegen.php");
           exit;

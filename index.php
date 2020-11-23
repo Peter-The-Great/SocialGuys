@@ -30,8 +30,8 @@ session_start();
       <img class="img-fluid w-100" src="uploads/Thumbnail/mario.png" alt="First slide">
         <div class="container">
           <div class="carousel-caption">
-            <a href="index.php" class="text-light"><h1>Super mario Odyssey</h1>
-            <p>Cool mario game</p></a>
+            <a href="kanaal.php?id=15" class="text-light"><h1>Super mario Odyssey</h1>
+            <p>Cool mario game!</p></a>
           </div>
         </div>
       </div>
@@ -39,8 +39,8 @@ session_start();
       <img class="img-fluid w-100" src="uploads/Thumbnail/minecraft.png" alt="First slide">
         <div class="container">
           <div class="carousel-caption text-light">
-            <a href="index.php" class="text-light"><h1>Minecraft Java</h1>
-            <p>Download minecraft today to join us and get a 50% discount on purchase</p></a>
+            <a href="kanaal.php?id=15" class="text-light"><h1>Minecraft Java</h1>
+            <p>Download minecraft today to join us and get a 50% discount on purchase!</p></a>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ session_start();
         <div class="container">
           <div class="carousel-caption text-light">
             <a href="index.php" class="text-light"><h1>Breath of the wild 2</h1>
-            <p>The new zelda game is coming out are you excited</p></a>
+            <p>The new zelda game is coming out. Are you excited!</p></a>
           </div>
         </div>
       </div>
