@@ -1,15 +1,10 @@
 <?php
-  require 'php/database.php';
+  require('php/database.php');
 
   //zoek de id in de url
   $id = $_GET['id'];
 
   //query voor de om de video op te halen
-  $query = "SELECT * FROM video WHERE KanaalID = ". $id;
-  //query om de kanaal te zoeken
-  $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID = ". $id;
-  //resultaat voor de video query
-  $result = mysqli_query($conn, $query);
   ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -26,7 +21,13 @@
     <?php require("components/sidebar.php"); ?>
     <div id="page-content-wrapper">
     <?php require("components/navigation.php");?>
-  <?php 
+    <div class="col">
+  <?php
+    $query = "SELECT * FROM `video` WHERE `KanaalID` = ". $id;
+    //query om de kanaal te zoeken
+    $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID = ". $id;
+    //resultaat voor de video query
+    $result = mysqli_query($conn, $query);
   $foutmelding = "";
   $path = 'uploads/videos/';
   //checked of de url wel een id ontvangt en geen string
@@ -50,21 +51,25 @@
     //loop over de resultaat voor van de resultaten.
     foreach($resultaat as $kanaal)
     {
+    echo "";
       echo "<img class='img-fluid ml-1' style='border-radius: 150px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'>";
-      echo "<h2>".$kanaal['Naam']."</h2>";?>
-      <button type="button" class="btn btn-outline-danger" id="subscribe" value="<?php $kanaal['Kanaal_ID'] ?>">Subscribe</button>
+      echo "<h2 class='text-white'>".$kanaal['Naam']."</h2>";?>
+      <form action="php/subscribe.php" method="post">
+              <input type="hidden" name="kanaalID" value="<?php echo $kanaal['Kanaal_ID']; ?>">
+              <input type="submit" class="btn btn-outline-info" name="subscribe" value="Subscribe"></input>
+            </form>
       <?php
       foreach($result as $video)
       {
         //query voor de video categorie
-        $queryC = "SELECT Naam FROM `categorie` WHERE Categorie_ID = ". $video['Categorie_ID'];
+        $queryC = "SELECT Naam FROM `categorie` WHERE Categorie_ID = ". $video['CategorieID'];
         $resultC = mysqli_query($conn, $queryC);
 
         $filename = $video['File'];
         $filepath = $path.$filename;
         $fileExtension = substr($filename, -3);
         //echo de video titel
-        echo "<h3>".$video['Naam']."</h3>";
+        echo "<h3 class='text-white'>".$video['Naam']."</h3>";
         echo "<video witdth='320' height='240' poster='uploads/thumbnails/".$video['Thumbnail']."' controls muted>";
           echo "<source src='".$filepath."' type='video/".$fileExtension."'>";
           echo "Your browser doesn't support the video tag!";
@@ -82,6 +87,7 @@
     echo $foutmelding;
   }
  ?>
+ </div>
 </div>
 </div>
 <?php require("components/scripts.php");?>

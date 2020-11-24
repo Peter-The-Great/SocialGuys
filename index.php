@@ -27,7 +27,7 @@ session_start();
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-      <img class="img-fluid w-100" src="uploads/Thumbnail/mario.png" alt="First slide">
+      <img class="img-fluid w-100" src="uploads/Thumbnails/mario.png" alt="First slide">
         <div class="container">
           <div class="carousel-caption">
             <a href="kanaal.php?id=15" class="text-light"><h1>Super mario Odyssey</h1>
@@ -36,7 +36,7 @@ session_start();
         </div>
       </div>
       <div class="carousel-item">
-      <img class="img-fluid w-100" src="uploads/Thumbnail/minecraft.png" alt="First slide">
+      <img class="img-fluid w-100" src="uploads/Thumbnails/minecraft.png" alt="First slide">
         <div class="container">
           <div class="carousel-caption text-light">
             <a href="kanaal.php?id=15" class="text-light"><h1>Minecraft Java</h1>
@@ -45,7 +45,7 @@ session_start();
         </div>
       </div>
       <div class="carousel-item">
-      <img class="img-fluid w-100" src="uploads/Thumbnail/zelda.png" alt="First slide">
+      <img class="img-fluid w-100" src="uploads/Thumbnails/zelda.png" alt="First slide">
         <div class="container">
           <div class="carousel-caption text-light">
             <a href="index.php" class="text-light"><h1>Breath of the wild 2</h1>
