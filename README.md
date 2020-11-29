@@ -18,3 +18,6 @@ Dit zijn alle files met de inlog pagina modal en de files voor het toevoegen van
 nog geimplementeerd worden.
 ## Derde week v0.3
 Dit zijn alle files met de kanaal pagina backend en de front end voor de homepagina.
+## Vierde week v0.4
+Dit zijn alle files met de kanaal pagina backend en de front end voor de homepagina. De kanaal pagina moet alleen nog een front end krijgen.
+Thom is begonnen aan de de backend voor de subscribers. Het hoeft alleen nog toegevoegd worden aan de sidebar.
