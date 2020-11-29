@@ -91,3 +91,22 @@ margin-left: 0;
   max-width: 100%;
   height: 32rem;
 }
+
+/* Hier is iets wat ik wil testen met de scrollbar */
+/*
+::-webkit-scrollbar {
+    width: 15px;
+    /* display: none; */
+/*}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: #772ce8;
+}
+::-webkit-scrollbar-thumb {
+    background: #5d29ab; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #5d29ab; 
+}*/

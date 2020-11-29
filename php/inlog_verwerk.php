@@ -26,7 +26,9 @@
       $kanaal = mysqli_fetch_array($resultaat);
       $_SESSION['kanaalID'] = $kanaal['Kanaal_ID'];
       $_SESSION['username'] = $kanaal['Naam'];
+      $_SESSION['categorie'] = $kanaal['CategorieID'];
       $_SESSION['loggedin'] = true;
+      $_SESSION['profile'] = $kanaal['ProfielPhoto'];
       header('location: ../');
     } else
     {

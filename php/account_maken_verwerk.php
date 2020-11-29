@@ -51,11 +51,16 @@
           strlen($email) > 0 &&
           strlen($password) > 0 &&
           strlen($categorie) > 0 &&
-          strlen($fileName) > 0) 
+          strlen($fileName) > 0)
       {
           //voer de query uit
           $result = $conn->query($query);
           $uploaded = move_uploaded_file($fileTmpPath, $path);
+          $_SESSION['kanaalID'] =  $conn->query("SELECT Kanaal_ID FROM kanaal WHERE Naam = '$username'");
+          $_SESSION['username'] = $username;
+          $_SESSION['categorie'] = $categorie;
+          $_SESSION['loggedin'] = true;
+          $_SESSION['profile'] = $fileName;
           
           if ($result && $uploaded) 
           {

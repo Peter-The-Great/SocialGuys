@@ -21,7 +21,8 @@
     <?php require("components/sidebar.php"); ?>
     <div id="page-content-wrapper">
     <?php require("components/navigation.php");?>
-    <div class="col">
+    <div class="ml-3">
+    <div class="col pt-5 mx-auto">
   <?php
     $query = "SELECT * FROM `video` WHERE `KanaalID` = ". $id;
     //query om de kanaal te zoeken
@@ -51,9 +52,9 @@
     //loop over de resultaat voor van de resultaten.
     foreach($resultaat as $kanaal)
     {
-    echo "";
+      echo "";
       echo "<img class='img-fluid ml-1' style='border-radius: 150px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'>";
-      echo "<h2 class='text-white'>".$kanaal['Naam']."</h2>";?>
+      echo "<h2 class='text-white mb-5'>".$kanaal['Naam']."</h2></div>";?>
       <form action="php/subscribe.php" method="post">
               <input type="hidden" name="kanaalID" value="<?php echo $kanaal['Kanaal_ID']; ?>">
               <input type="submit" class="btn btn-outline-info" name="subscribe" value="Subscribe"></input>
