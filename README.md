@@ -6,18 +6,7 @@ Elke versie sla ik (Thom) de nieuwste code op in een mapje op mijn SSD
 
 # Versie beheer
 Elke week wordt er op vrijdag een nieuwe versie uitgebracht waar wij op dat moment zijn. <br>
-We werken met twee branches, een main branch voor de nieuwe versies en een voor de development fases.
-[De git feature based workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
-
-# SocialGuys
-A social video sharing website
-
-# Back up
-Elke versie sla ik (Thom) de nieuwste code op in een mapje op mijn SSD
-
-# Versie beheer
-Elke week wordt er op vrijdag een nieuwe versie uitgebracht waar wij op dat moment zijn. <br>
-We werken met twee branches, een main branch voor de nieuwe versies en een voor de development fases.
+We werken met twee branches, een main branch voor de nieuwe versies en een vo or de development fases.
 [De git feature based workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
 # Releases
@@ -29,15 +18,6 @@ Dit zijn alle files met de inlog pagina modal en de files voor het toevoegen van
 nog geimplementeerd worden.
 ## Derde week v0.3
 Dit zijn alle files met de kanaal pagina backend en de front end voor de homepagina.
-<<<<<<< HEAD
-
-
-# Back up
-Elke versie sla ik (Thom) de nieuwste code op in een mapje op mijn SSD
-
-# Versie beheer
-Elke week wordt er op vrijdag een nieuwe versie uitgebracht waar wij op dat moment zijn. <br>
-We werken met twee branches, een main branch voor de nieuwe versies en een voor de development fases.
-[De git feature based workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
-=======
->>>>>>> main
+## Vierde week v0.4
+Dit zijn alle files met de kanaal pagina backend en de front end voor de homepagina. De kanaal pagina moet alleen nog een front end krijgen.
+Thom is begonnen aan de de backend voor de subscribers. Het hoeft alleen nog toegevoegd worden aan de sidebar. Wat volgende week al af is.

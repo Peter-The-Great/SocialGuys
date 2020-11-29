@@ -23,7 +23,8 @@
     $query = "INSERT INTO `subscriptions`(`KanaalID`, `Subscription`) VALUES ($subscriber,$subscribee)";
 
     $foutmelding = "";
-
+    
+    //Dit doet het nog niet.
     if ($subscriber == $subscribee)
     {
       $foutmelding .= "<p>ERROR: You can't subscribe to yourself!";
