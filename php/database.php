@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
     $user = 'root';
     $pass = '';
-    $db = 'socialguys';
+    $db = 'test';
     $host = '127.0.0.1';
     
     //Create connection

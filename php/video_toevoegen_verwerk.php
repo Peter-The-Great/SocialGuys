@@ -86,6 +86,8 @@
         $uploadedThumbnail = move_uploaded_file($fileTmpPathThumbnail, $pathThumbnail);
 
         if ($result && $uploaded && $uploadedThumbnail)
+
+        if ($result && $uploaded)
         {
           header("location: ../video_toevoegen.php");
           exit;
