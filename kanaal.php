@@ -1,6 +1,6 @@
 <?php
+  session_start();
   require('php/database.php');
-
   //zoek de id in de url
   $id = $_GET['id'];
 
@@ -52,13 +52,12 @@
     //loop over de resultaat voor van de resultaten.
     foreach($resultaat as $kanaal)
     {
-      echo "";
-      echo "<img class='img-fluid ml-1' style='border-radius: 150px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'>";
-      echo "<h2 class='text-white mb-5'>".$kanaal['Naam']."</h2></div>";?>
-      <form action="php/subscribe.php" method="post">
+      echo "<img class='img-fluid ml-1' style='border-radius: 150px; width: 150px; height: 140px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'>";
+      echo "<div class='row justify-content-start'><h2 class='text-white'>".$kanaal['Naam']."</h2>";?>
+      <div class="ml-5"><form action="php/subscribe.php" method="post">
               <input type="hidden" name="kanaalID" value="<?php echo $kanaal['Kanaal_ID']; ?>">
               <input type="submit" class="btn btn-outline-info" name="subscribe" value="Subscribe"></input>
-            </form>
+            </form></div></div></div>
       <?php
       foreach($result as $video)
       {
@@ -70,11 +69,11 @@
         $filepath = $path.$filename;
         $fileExtension = substr($filename, -3);
         //echo de video titel
-        echo "<h3 class='text-white'>".$video['Naam']."</h3>";
         echo "<video witdth='320' height='240' poster='uploads/thumbnails/".$video['Thumbnail']."' controls muted>";
           echo "<source src='".$filepath."' type='video/".$fileExtension."'>";
           echo "Your browser doesn't support the video tag!";
         echo "</video>";
+        echo "<h3 class='text-white'>".$video['Naam']."</h3>";
         foreach($resultC as $catagorie)
         {
           //echo de categorie naam door de query
