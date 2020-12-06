@@ -2,5 +2,5 @@
     session_start();
     session_unset();
     session_destroy();
-    header("Location: index.php?message=Je bent uitgelogd!");
+    header("Location: ../index.php?message=Je bent uitgelogd!");
 ?>

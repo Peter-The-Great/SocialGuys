@@ -20,9 +20,9 @@
                 echo "</li>";
             }
             else{
-                echo "<li class='nav-item'>
-                <img class='img-fluid rounded mx-auto' src='uploads/uploads/". $_SESSION['profile'] ."'>
-                <a class='nav-link text-blank' href='logout.php'>Logout</a>
+                echo "<li class='nav-item row'>
+                <img class='img-fluid rounded-circle mx-auto' width='70px' height='70px' src='uploads/profile/". $_SESSION['profile'] ."'>
+                <a class='nav-link text-blank' href='php/logout.php'>Logout</a>
                 </li>";
             }
             ?>

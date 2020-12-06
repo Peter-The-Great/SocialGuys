@@ -52,9 +52,10 @@
     //loop over de resultaat voor van de resultaten.
     foreach($resultaat as $kanaal)
     {
-      echo "<img class='img-fluid ml-1' style='border-radius: 150px; width: 150px; height: 140px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'>";
-      echo "<div class='row justify-content-start'><h2 class='text-white'>".$kanaal['Naam']."</h2>";?>
-      <div class="ml-5"><form action="php/subscribe.php" method="post">
+      echo "<div class='row justify-content-start'>
+      <img class='img-fluid ml-1 rounded-circle' style='width: 70px; height: 70px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'>
+      <h2 class='text-white ml-2 mt-4'>".$kanaal['Naam']."</h2>";?>
+      <div class="ml-3 mt-4"><form action="php/subscribe.php" method="post">
               <input type="hidden" name="kanaalID" value="<?php echo $kanaal['Kanaal_ID']; ?>">
               <input type="submit" class="btn btn-outline-info" name="subscribe" value="Subscribe"></input>
             </form></div></div></div>

@@ -24,7 +24,7 @@
     // get details of the uploaded file
     $fileTmpPath = $_FILES['profiel']['tmp_name'];
     $fileName = $_FILES['profiel']['name'];
-    $path = "../uploads/".$fileName;
+    $path = "../uploads/profile/".$fileName;
     $file1 = explode(".",$fileName);
     //foutmelding die in de else dingen word gebruikt
     $foutmelding = "";
