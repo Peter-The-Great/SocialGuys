@@ -7,7 +7,7 @@
   }
   else
   {
-    $_SESSION["email"];
+  
     $_SESSION['kanaalID'];
     $_SESSION['username'];
   }
@@ -29,6 +29,7 @@
     {
       $foutmelding .= "<p>ERROR: You can't subscribe to yourself!";
       echo $foutmelding;
+      header("location: ../index.php?message=You can't subscribe to yourself!");
     }
 
     $result = mysqli_query($conn, $query);
