@@ -18,17 +18,21 @@
 
   <body class="bg-back">
     <div class="d-flex">
-    <?php require("components/sidebar.php"); ?>
+    <?php require("components/sidebar.php");?>
     <div id="page-content-wrapper">
     <?php require("components/navigation.php");?>
     <div class="ml-3">
     <div class="col pt-5 mx-auto">
   <?php
-    $query = "SELECT * FROM `video` WHERE `KanaalID` = ". $id;
-    //query om de kanaal te zoeken
-    $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID = ". $id;
-    //resultaat voor de video query
-    $result = mysqli_query($conn, $query);
+  $query = "SELECT * FROM `video` WHERE `Video_ID` = ". $id;
+  //query om de kanaal te zoeken
+  //resultaat voor de video query
+  $result = mysqli_query($conn, $query);
+  $row = $result->fetch_assoc();
+  $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID =" . $row["KanaalID"] ;
+  
+  //echo $result['KanaalID'];
+  $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID = 15 ";
   $foutmelding = "";
   $path = 'uploads/videos/';
   //checked of de url wel een id ontvangt en geen string
@@ -53,12 +57,9 @@
     foreach($resultaat as $kanaal)
     {
       echo "<div class='row justify-content-start'>
-      <img class='img-fluid ml-1 rounded-circle' style='width: 70px; height: 70px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'>
-      <h2 class='text-white ml-2 mt-4'>".$kanaal['Naam']."</h2>";?>
-      <div class="ml-3 mt-4"><form action="php/subscribe.php" method="post">
-              <input type="hidden" name="kanaalID" value="<?php echo $kanaal['Kanaal_ID']; ?>">
-              <input type="submit" class="btn btn-outline-info" name="subscribe" value="Subscribe"></input>
-            </form></div></div></div>
+      <a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><img class='img-fluid ml-1 rounded-circle' style='width: 70px; height: 70px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'></a>
+      <a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><h2 class='text-white ml-2 mt-4'>".$kanaal['Naam']."</h2></a>";?>
+      </div></div>
       <?php
       foreach($result as $video)
       {
@@ -74,11 +75,11 @@
           echo "<source src='".$filepath."' type='video/".$fileExtension."'>";
           echo "Your browser doesn't support the video tag!";
         echo "</video>";
-        echo "<h3 class='text-white'>".$video['Naam']."</h3>";
+        echo "<div class='row mt-3 mx-auto'><h3 class='text-white'>".$video['Naam']."</h3>";
         foreach($resultC as $catagorie)
         {
           //echo de categorie naam door de query
-          echo "<p class='text-white'>".$catagorie['Naam']."</p>";
+          echo "<p class='text-white ml-2 mt-3'>".$catagorie['Naam']."</p>";
         }
       }
     }
@@ -88,6 +89,11 @@
     echo $foutmelding;
   }
  ?>
+ <div class="ml-3"><form action="php/subscribe.php" method="post">
+              <input type="hidden" name="kanaalID" value="<?php echo $kanaal['Kanaal_ID']; ?>">
+              <input type="submit" class="btn btn-outline-info" name="subscribe" value="Subscribe"></input>
+            </form></div>
+</div>
  </div>
 </div>
 </div>

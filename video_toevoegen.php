@@ -7,45 +7,35 @@
     }
     else
     {
-      $_SESSION["email"];
+      
       $_SESSION['kanaalID'];
       $_SESSION['username'];
       $_SESSION['loggedin'] = true;
     }
-  require 'php/database.php';
+  require('php/database.php');
   //query om de categorien te vinden in de database
-  $query = "SELECT * FROM `categorie`";
+  //$query = "SELECT `Categorie_ID`, `Naam` FROM `categorie`";
   
   //maak een resultaat door te verbinden met de database
-  $result = mysqli_query($conn, $query);
+  //$result = $conn->query($query);
+  //$resultaat = $result->fetch_assoc();
   
   $kanaalID = $_SESSION['kanaalID'];
  ?>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <meta charset="UTF-8">
+    <?php require('components/head.php');?>
+    <title>SocialGuys</title>
   </head>
-  <body>
-    <form action="php/video_toevoegen_verwerk.php" enctype="multipart/form-data" method="post">
-      <p>Title:</p>
-      <input type="text" name="titel" placeholder="Title">
-      <p>Categorie</p>
-      <select name="categorie"><br>
-        <?php 
-           while ($categorie = mysqli_fetch_array($result)) 
-           {
-             echo "<option value='".$categorie['Categorie_ID']."'>";
-               echo $categorie['Naam'];
-             echo "</option>";
-           }
-         ?>
-      </select>
-      <p>Video file:</p>
-      <input type="file" name="video" ><br>
-      <p>Thumbnail:</p>
-      <input type="file" name="thumbnail" ><br>
-      <input type="submit" name="uploaden" value="Upload">
-    </form>
+  <body class="bg-back">
+  <div class="d-flex">
+  <?php require("components/sidebar.php");?>
+  <div id="page-content-wrapper">
+  <?php require("components/navigation.php");?>
+</div>
+</div>
+</div>
+<?php require('components/scripts.php');?>
   </body>
 </html>

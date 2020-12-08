@@ -1,69 +1,61 @@
-<div class='bg-twitch rounded mt-5' id='sidebar-wrapper'>
-    <div class='list-group list-group-flush'>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Subscriptions</a>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Channel</a>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Channel</a>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Channel</a>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Channel</a>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Channel</a>
-    </div>
-  </div>
-<!--<?php
-  if (!isset($_SESSION['username'], $_SESSION['kanaalID']))
+<?php
+require 'php/database.php';
+  
+  if (!isset($_SESSION['username']))
   {
-    /*echo "<div class='bg-twitch rounded' id='sidebar-wrapper'>
-    <div class='list-group list-group-flush'>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Subscriptions</a>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Channel</a>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Channel</a>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Channel</a>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Channel</a>
-      <a href='#' class='list-group-item list-group-item-action text-white bg-dark'>Channel</a>
-    </div>
-  </div>";*/
+    ?>
+   <div class="bg-twitch rounded" id="sidebar-wrapper">
+         <div class="list-group list-group-flush">
+           <a disabled="disabled" class="list-group-item list-group-item-action text-white bg-dark">Your not subscibed to anyone</a>
+         </div>
+       </div>
+       <?php
   }
   else
   {
-    //$_SESSION["email"];
     $_SESSION['kanaalID'];
     $_SESSION['username'];
-  }
-  require 'php/database.php';
-
+  
+  ?>
+  
+ <div class="bg-twitch rounded" id="sidebar-wrapper">
+       <div class="list-group mt-3 list-group-flush">
+         <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Subscriptions</a>
+  <?php
+  
   //krijgt de id van de ingelogde kanaal en het kanaal waar je op wilt abonneren
   $subscriber = $_SESSION['kanaalID'];
-
+  
   //de query om ze in de db te zetten als het goed is moet dit gewoon werken.
-  $query = "SELECT * FROM subscriptions WHERE KanaalID =" . $subscriber;
+  $query = "SELECT * FROM `subscriptions` WHERE KanaalID = '$subscriber'";
   $result = mysqli_query($conn, $query);
   if ($result) 
   {
-    foreach ($result as $subsription) 
+    while ($subscription = mysqli_fetch_array($result))
     {
       $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID = ". $subscription['Subscription'];
-
+  
       $resultaat = mysqli_query($conn, $queryKanaal);
       foreach ($resultaat as $kanaal) 
       {
         ?>
-       <div class="bg-twitch rounded" id="sidebar-wrapper">
-             <div class="list-group list-group-flush">
-               <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Subscriptions</a>
-               <a href="kanaal.php?id=<?php echo $kanaal['Kanaal_ID']; ?>" class="list-group-item list-group-item-action text-white bg-dark"><?php echo $kanaal['Naam']; ?></a>
-             </div>
-           </div>
+          <a href="kanaal.php?id=<?php echo $kanaal['Kanaal_ID']; ?>" class="list-group-item list-group-item-action text-white bg-dark"><?php echo $kanaal['Naam']; ?></a>
         <?php
       }
     }
   } else 
   {
- ?>
-<div class="bg-twitch rounded" id="sidebar-wrapper">
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action text-white bg-dark">Subscriptions</a>
-        <a href="kanaal.php?id=" class="list-group-item list-group-item-action text-white bg-dark">Your not subscibed to anyone</a>
-      </div>
-    </div>
- <?php 
+    ?>
+    <div class="bg-twitch rounded" id="sidebar-wrapper">
+          <div class="list-group list-group-flush">
+            <a disabled="disabled" class="list-group-item list-group-item-action text-white bg-dark">There is something wrong with getting your subscriptions</a>
+          </div>
+        </div>
+    <?php
+  }
+  ?>
+</div>
+</div>
+  <?php
 }
-  ?>-->
+?>

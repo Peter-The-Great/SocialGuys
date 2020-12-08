@@ -2,30 +2,73 @@
     <a class="navbar-brand nav-item mr-auto" href="./">
     <img src="img/logo.png" class="img-fluid socialguys rounded" alt="Social Guys"> <no class="text-blank">Social Guys</no>
     </a>
-    <form class="form-inline mx-4 my-3">
-    <input class="form-control mr-sm-2" type="search" size="40" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-info my-2 my-sm-0 btn-round" type="submit">Search
-    </button>
-    </form>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse my-2" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto mr-5">
                 <?php
             if(!isset($_SESSION['loggedin'])) {
                 echo "
                 <li class='nav-item'>";
-                require('components/login.php');  
+                require('components/login.php');
                 echo "</li>";
             }
             else{
-                echo "<li class='nav-item row'>
-                <img class='img-fluid rounded-circle mx-auto' width='70px' height='70px' src='uploads/profile/". $_SESSION['profile'] ."'>
-                <a class='nav-link text-blank' href='php/logout.php'>Logout</a>
-                </li>";
+                echo "<div class='btn-group'>
+                <button type='button' class='btn btn-secondary dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                  <img class='img-fluid rounded-circle mx-auto' width='70px' height='70px' src='uploads/profile/". $_SESSION['profile'] ."'>
+                </button>
+                <div class='dropdown-menu'>
+                  <a class='dropdown-item' style='cursor:pointer;' data-toggle='modal' data-target='#toevoeg'>Add video</a>
+                  <a class='dropdown-item' href='kanaal.php?id=" . $_SESSION['kanaalID']. "'>Channel</a>
+                  <a class='dropdown-item' href='php/logout.php'>Logout</a>
+              </div>";
             }
             ?>
         </ul>
     </div>
 </nav>
+<div id="toevoeg" aria-labelledby="toevoegLabel" aria-hidden="true" class="modal fade text-left" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add video</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form action="php/video_toevoegen_verwerk.php" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Video title</label>
+            <input name="Naam" id="video title" class="form-control" placeholder="Video title" type="text">
+        </div>
+        <div class="form-group">
+      <label>Categorie:</label><select class="form-control" name="categorie">
+      <option selected disabled >Select Catagorie</option>
+      <option value="1">Lets Play</option>
+      <option value="2">Speedrun</option>
+      <option value="3">Trailer</option>
+      <option value="4">Tournament</option>
+      <option value="5">Commentary</option>
+      <option value="6">Art</option>
+      <option value="7">Just Chatting</option> 
+          </select>
+          </div>
+          <div class="form-group">
+            <label>Select video</label><input class="form-control-file" type="file" name="video">
+          </div>
+          <div class="form-group">
+            <label>Thumbnail picture</label><input class="form-control-file" type="file" name="profiel">
+          </div>
+              <input type="submit" class="btn btn-dark btn-block" name="accountMaken" value="Upload">
+          </div>
+          <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+      </div>
+        </form>
+      </div>
+    </div>
+  </div>
