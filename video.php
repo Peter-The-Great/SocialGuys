@@ -3,7 +3,7 @@
   require('php/database.php');
   //zoek de id in de url
   $id = $_GET['id'];
-
+  
   //query voor de om de video op te halen
   ?>
   <!DOCTYPE html>
@@ -32,7 +32,7 @@
   $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID =" . $row["KanaalID"] ;
   
   //echo $result['KanaalID'];
-  $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID = 15 ";
+  //$queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID = 15 ";
   $foutmelding = "";
   $path = 'uploads/videos/';
   //checked of de url wel een id ontvangt en geen string
@@ -93,6 +93,14 @@
               <input type="hidden" name="kanaalID" value="<?php echo $kanaal['Kanaal_ID']; ?>">
               <input type="submit" class="btn btn-outline-info" name="subscribe" value="Subscribe"></input>
             </form></div>
+            <?php
+            if($kanaal['Kanaal_ID'] === $_SESSION['kanaalID']){
+              ?><div class="ml-3"><form action="php/videoverwijder.php" method="post">
+              <input type="hidden" name="VideoID" value="<?php echo $video['Video_ID']; ?>">
+              <input type="submit" class="btn btn-outline-info" name="verwijder" value="Verwijder Video"></input>
+            </form></div>
+            <?php }
+            ?>
 </div>
  </div>
 </div>

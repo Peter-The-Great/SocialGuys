@@ -69,7 +69,7 @@ foreach($result as $video)
   echo "<div class='card mb-4 text-white bg-dark'>
             <a href='video.php?id=". $video['Video_ID'] ."'><img class='card-img-top' src='uploads/thumbnails/".$video['Thumbnail']."'></a>
             <div class='card-body'>
-            <a href='video.php?id=". $video['Video_ID'] ."'><h5 class='card-title'>Card title</h5></a>
+            <a href='video.php?id=". $video['Video_ID'] ."'><h5 class='card-title'>". $video['Naam'] ."</h5></a>
                <div class='info-section'>
 					<a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><label class='text-white' style='cursor:pointer;'>". $kanaal['Naam'] ."</label></a>
 					<span>0 Views</span>

@@ -1,10 +1,10 @@
 <?php
     session_start();
-    require_once("database.php");
+    require("database.php");
     if(!isset($_POST["email"], $_POST["username"], $_POST["password"]) ) {
         header("Location: index.php?message=Je hebt niet alle velden correct ingevuld!");
     }
-    if($stmt = $conn->prepare("SELECT id, email, password, username FROM users WHERE email = ?")) {
+    if($stmt = $conn->prepare("SELECT `Kanaal_ID`, `Email`, `Password`, `Naam` FROM `kanaal` WHERE `Email` = ?")) {
         $stmt->bind_param("s", $_POST["email"]);
         $stmt->execute();
         $stmt->store_result();
@@ -15,11 +15,11 @@
             
             $pswrd = $_POST["password"];
             if (sha1($pswrd) == $password) {
-                $_SESSION["email"] = $email;
                 $_SESSION['userid'] = $id;
+                $_SESSION["email"] = $email;
                 $_SESSION['username'] = $username;
                 $_SESSION['loggedin'] = true;
-                header('location: ../index.php');
+                header('location: ../index.php?'. $_SESSION['userid'] .'');
             }
                 else {
                     session_destroy();
