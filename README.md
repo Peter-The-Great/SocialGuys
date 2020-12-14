@@ -24,3 +24,7 @@ Thom is begonnen aan de de backend voor de subscribers. Het hoeft alleen nog toe
 ## Vijfde week v0.5
 De front end is bijna klaar er moet alleen nog gewerkt worden aan de cards. De sidebar heeft een kleine bug die nog gefixed moet worden.
 Verderrest werkt alles goed en komt het hoogstwaarschijnlijk af.
+## Zesde week v0.6
+De front end is bijna klaar, er moet nog een browse pagina komen, die kan gemaakt worden want er is nu een manier om views te tracken en dus kunnen de 
+laatste beetjes worden gemaakt. We hebben waarschijnlijk niet genoeg tijd om het in te leveren op 14 december maar dat moeten wij overleggen met
+meneer Thijen.
