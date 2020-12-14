@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-xl justify-content-between navbar-dark bg-twitch" id="navbartrying">
+<nav class="navbar navbar-expand-xl justify-content-between navbar-dark bg-twitch" id="navbartrying"<?php if($_SERVER['SCRIPT_NAME'] == "/SocialGuys/video.php"){ echo "style='margin-right:-15rem!important;'";} ?>>
     <a class="navbar-brand nav-item mr-auto" href="./">
     <img src="img/logo.png" class="img-fluid socialguys rounded" alt="Social Guys"> <no class="text-blank">Social Guys</no>
     </a>
