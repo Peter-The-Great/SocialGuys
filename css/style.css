@@ -67,9 +67,14 @@ margin-left: 0;
 #wrapper.toggled #sidebar-wrapper {
   margin-left: -15rem;
 }
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+}
 }
 #navbartrying{
   margin-left: -15rem!important;
+  margin-right: -15rem!important;
 }
 /* Carousel base class */
 .carousel {

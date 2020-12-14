@@ -3,7 +3,9 @@
   require('php/database.php');
   //zoek de id in de url
   $id = $_GET['id'];
-  
+  if ($_SESSION['kanaalID'] == NULL){
+    $_SESSION['kanaalID'] = 0;
+  }
   //query voor de om de video op te halen
   ?>
   <!DOCTYPE html>
@@ -22,7 +24,7 @@
     <div id="page-content-wrapper">
     <?php require("components/navigation.php");?>
     <div class="ml-3">
-    <div class="col pt-5 mx-auto">
+    <div class="col pt-5 mb-2 mx-auto">
   <?php
   $query = "SELECT * FROM `video` WHERE `Video_ID` = ". $id;
   //query om de kanaal te zoeken
@@ -58,8 +60,8 @@
     {
       echo "<div class='row justify-content-start'>
       <a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><img class='img-fluid ml-1 rounded-circle' style='width: 70px; height: 70px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'></a>
-      <a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><h2 class='text-white ml-2 mt-4'>".$kanaal['Naam']."</h2></a>";?>
-      </div></div>
+      <a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><h2 class='text-white ml-2 mt-4'>".$kanaal['Naam']."</h2></a>";
+      ?></div></div>
       <?php
       foreach($result as $video)
       {
@@ -71,7 +73,7 @@
         $filepath = $path.$filename;
         $fileExtension = substr($filename, -3);
         //echo de video titel
-        echo "<video autoplay witdth='320' height='240' poster='uploads/thumbnails/".$video['Thumbnail']."' controls>";
+        echo "<video autoplay witdth='320' height='240' poster='uploads/thumbnails/".$video['Thumbnail']."' muted controls>";
           echo "<source src='".$filepath."' type='video/".$fileExtension."'>";
           echo "Your browser doesn't support the video tag!";
         echo "</video>";
@@ -96,6 +98,7 @@
             <?php
             if($kanaal['Kanaal_ID'] === $_SESSION['kanaalID']){
               ?><div class="ml-3"><form action="php/videoverwijder.php" method="post">
+              <input type="hidden" name="Kanaalid" value="<?php echo $kanaal['Kanaal_ID']; ?>">
               <input type="hidden" name="VideoID" value="<?php echo $video['Video_ID']; ?>">
               <input type="submit" class="btn btn-outline-info" name="verwijder" value="Verwijder Video"></input>
             </form></div>
@@ -104,6 +107,7 @@
 </div>
  </div>
 </div>
+<?php require("components/comments.php");?>
 </div>
 <?php require("components/scripts.php");?>
 </body>

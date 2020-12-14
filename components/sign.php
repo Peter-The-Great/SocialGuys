@@ -5,7 +5,7 @@
             <center><img class="rounded" type="image/svg+xml" style="max-width: 20%; height:auto;" src="img/logo.svg"></center>
             <h4 class="card-title mb-4 mt-1">Sign in</h4>
             <!-- Forum Itself -->
-            <form method="POST" action="php/kanaalaanmaken.php">
+            <form method="POST" action="php/account_maken_verwerk.php">
                 <div class="form-group">
                     <input type="mail" name="email" class="form-control" id="email" placeholder="someone45@gmial.com">
                 </div>

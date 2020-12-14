@@ -31,7 +31,7 @@
       $_SESSION['kanaalID'] = $kanaal['Kanaal_ID'];
       $_SESSION['username'] = $kanaal['Naam'];
       $_SESSION['loggedin'] = true;
-      header('location: ../video_toevoegen.php');
+      header('location: ../index.php');
     } else
     {
       echo "<p style='font-family: 'nimbusantregconregular';'>Naam en/of wachtwoord zijn onjuist ingevoerd!</p>";
