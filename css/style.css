@@ -108,7 +108,7 @@ margin-left: 0;
 .videos{
     height: 600px;
     width: 700px;
-    margin:0 auto;
+    margin: 0;
 }
 .card-body a{
     text-decoration: none;
@@ -142,6 +142,7 @@ margin-left: 0;
 }
 .card{
     width: 200px;
+    
 
 
 }

@@ -26,6 +26,7 @@ $query = "SELECT * FROM `video` WHERE `KanaalID` = ". $id;
 //query om de kanaal te zoeken
 $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID = ". $id;
 //resultaat voor de video query
+$subscribers = "SELECT COUNT(KanaalID) FROM `subscriptions` WHERE Subscription = ". $id;
 $result = mysqli_query($conn, $query);
 $foutmelding = "";
 $path = 'uploads/videos/';
@@ -48,12 +49,31 @@ if (!$resultaat)
 }
 foreach($resultaat as $kanaal)
     {
-      echo "<img class='img-fluid ml-1' style='border-radius: 150px; width: 150px; height: 140px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'>";
-      echo "<div class='row justify-content-start'><h2 class='text-white'>".$kanaal['Naam']."</h2>";?>
-      <div class="ml-5"><form action="php/subscribe.php" method="post">
+      //$subscribeQuery = "SELECT * FROM `subscription` WHERE `KanaalID` = '$id'";
+      echo "<img class='img-fluid ml-1 rounded-circle' style=' width: 150px; height: 140px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'>";
+      echo "<div class='row justify-content-start'><h2 class='text-white'>".$kanaal['Naam']."</h2>";
+      $subscribercount = mysqli_query($conn, $subscribers);
+            if ($subscribercount->num_rows > 0) {
+              // output data of each row
+              while($row = $subscribercount->fetch_assoc()) {
+                echo "<h2 class='text-white ml-3'>".$row['COUNT(KanaalID)']." Subscribers</h2>";
+              }
+            } else {
+              echo "<h2 class='text-white'>0 Subscribers</h2>";
+            }
+      ?>
+      <div class="ml-3"><form action="php/subscribe.php" method="post">
               <input type="hidden" name="kanaalID" value="<?php echo $kanaal['Kanaal_ID']; ?>">
               <input type="submit" class="btn btn-outline-info" name="subscribe" value="Subscribe"></input>
-            </form></div></div>
+            </form></div>
+            <?php
+            if($_SESSION['kanaalID']){
+            ?>
+            <div class="ml"><form action="php/unsubscribe.php" method="post">
+            <input type="hidden" name="kanaalID" value="<?php echo $kanaal['Kanaal_ID']; ?>">
+            <input type="submit" class="btn btn-outline-info" name="subscribe" value="Unsubscribe"></input>
+          </form></div><?php } ?>
+            </div>
    <div class="videos">
     <div class="row">
     <div class='col-md-4'>
@@ -65,15 +85,24 @@ foreach($result as $video)
   $filename = $video['File'];
   $filepath = $path.$filename;
   $fileExtension = substr($filename, -3);
+  $views = "SELECT COUNT(VideoID) FROM `views` WHERE VideoID = ". $video['Video_ID'];
   //echo de video titel
   echo "<div class='card mb-4 text-white bg-dark'>
             <a href='video.php?id=". $video['Video_ID'] ."'><img class='card-img-top' src='uploads/thumbnails/".$video['Thumbnail']."'></a>
             <div class='card-body'>
             <a href='video.php?id=". $video['Video_ID'] ."'><h5 class='card-title'>". $video['Naam'] ."</h5></a>
                <div class='info-section'>
-					<a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><label class='text-white' style='cursor:pointer;'>". $kanaal['Naam'] ."</label></a>
-					<span>0 Views</span>
-				</div>
+					<a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><label class='text-white' style='cursor:pointer;'>". $kanaal['Naam'] ."</label></a>";
+               $viewcount = mysqli_query($conn, $views);
+                          if ($viewcount->num_rows > 0) {
+                            // output data of each row
+                            while($rows = $viewcount->fetch_assoc()) {
+                              echo "<span class='text-white'> ".$rows['COUNT(VideoID)']." Views</span>";
+                            }
+                          } else {
+                            echo "<span class='text-white'> 0 Views</span>";
+                          }
+				echo"</div>
             </div>
          </div>
          </div>";
