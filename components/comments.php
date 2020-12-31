@@ -4,7 +4,7 @@ require 'php/database.php';
   if (!isset($_SESSION['username']))
   {
     ?>
-   <div class="bg-twitch rounded" id="sidebar-wrapper">
+   <div class="bg-twitch rounded" style="font-size: 0.90rem;" id="sidebar-wrapper">
          <div class="list-group list-group-flush">
            <a disabled="disabled" class="list-group-item list-group-item-action text-white bg-dark">Comments</a>
          </div>
@@ -18,7 +18,7 @@ require 'php/database.php';
   
   ?>
   
- <div class="bg-twitch rounded" id="sidebar-wrapper">
+ <div class="bg-twitch rounded" style="font-size: 0.90rem;" id="sidebar-wrapper">
        <div class="list-group mt-3 list-group-flush">
          <a href="#" disabled class="list-group-item list-group-item-action text-white bg-dark">Comments</a>
   <?php
@@ -46,7 +46,7 @@ require 'php/database.php';
   } else
   {
     ?>
-    <div class="bg-twitch rounded" id="sidebar-wrapper">
+    <div class="bg-twitch rounded" style="font-size: 0.90rem;" id="sidebar-wrapper">
           <div class="list-group list-group-flush">
             <a disabled="disabled" class="list-group-item list-group-item-action text-white bg-dark">There is something wrong with getting your comments</a>
           </div>

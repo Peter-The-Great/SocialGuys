@@ -6,13 +6,14 @@
 
     $gebruikersnaam = $_POST['username'];
     $wachtwoord = $_POST['password'];
+
     $username = $gebruikersnaam;
     $username = mysqli_real_escape_string($conn,$username);
 
     $password = $wachtwoord;
     $password = mysqli_real_escape_string($conn,$password);
 
-    $query = "SELECT * FROM kanaal WHERE Naam = '$username' AND Password = '".sha1($password)."'";
+    $query = "SELECT * FROM `kanaal` WHERE `Naam` = '$username' AND `Password` = '".sha1($password)."'";
 
     $resultaat = mysqli_query($conn, $query);
 
@@ -24,12 +25,12 @@
     if (!$resultaat || mysqli_num_rows($resultaat) > 0)
     {
       $kanaal = mysqli_fetch_array($resultaat);
+
       $_SESSION['kanaalID'] = $kanaal['Kanaal_ID'];
       $_SESSION['username'] = $kanaal['Naam'];
-      $_SESSION['categorie'] = $kanaal['CategorieID'];
       $_SESSION['loggedin'] = true;
-      $_SESSION['profile'] = $kanaal['ProfielPhoto'];
-      header('location: ../');
+      $_SESSION['profilephoto'] = $kanaal['ProfielPhoto'];
+      header('location: ../index.php');
     } else
     {
       echo "<p style='font-family: 'nimbusantregconregular';'>Naam en/of wachtwoord zijn onjuist ingevoerd!</p>";

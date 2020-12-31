@@ -2,8 +2,11 @@
     <a class="navbar-brand nav-item mr-5" href="./">
     <img src="img/logo.png" class="img-fluid socialguys rounded" alt="Social Guys"> <no class="text-blank">Social Guys</no>
     </a>
-    <a href="browse.php"><button class="ml-5 btn btn-danger" type="button">
+    <a href="browse.php"><button class="ml-5 btn btn-dark" type="button">
         Browse
+    </button></a>
+    <a href="live.php"><button class="ml-5 btn btn-dark" type="button">
+        Live
     </button></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,9 +22,10 @@
                 echo "</li>";
             }
             else{
+                echo "<no class='text-blank' style='font-size: 28px;'>".$_SESSION['username'];
                 echo "<div class='btn-group'>
                 <button type='button' class='btn btn-secondary dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                  <img class='img-fluid rounded-circle mx-auto' width='70px' height='70px' src='uploads/profile/". $_SESSION['profile'] ."'>
+                  <img class='img-fluid rounded-circle mx-auto' width='75px' height='75px' src='uploads/profile/". $_SESSION['profilephoto'] ."'>
                 </button>
                 <div class='dropdown-menu'>
                   <a class='dropdown-item' style='cursor:pointer;' data-toggle='modal' data-target='#toevoeg'>Add video</a>

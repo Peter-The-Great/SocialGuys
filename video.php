@@ -73,7 +73,7 @@
         $filepath = $path.$filename;
         $fileExtension = substr($filename, -3);
         //echo de video titel
-        echo "<video autoplay witdth='320' height='240' poster='uploads/thumbnails/".$video['Thumbnail']."' muted controls>";
+        echo "<video autoplay style='width: 100%; height: auto;' poster='uploads/thumbnails/".$video['Thumbnail']."' muted controls>";
           echo "<source src='".$filepath."' type='video/".$fileExtension."'>";
           echo "Your browser doesn't support the video tag!";
         echo "</video>";
