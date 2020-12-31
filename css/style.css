@@ -30,7 +30,7 @@ a.bg-acc:focus,a.bg-acc:hover,button.bg-acc:focus,button.bg-acc:hover{
 /* Hier is een sidebar-wrapper die ik heb gevonden plus hier kunnen we een sidebar maken */
 #sidebar-wrapper {
 min-height: 100vh!important;
-margin-top: 6.1rem!important;
+margin-top: 6.8rem!important;
 -webkit-transition: margin .25s ease-out!important;
 -moz-transition: margin .25s ease-out!important;
 -o-transition: margin .25s ease-out!important;

@@ -24,7 +24,6 @@
     <div id="page-content-wrapper">
     <?php require("components/navigation.php");?>
     <div class="ml-3">
-    <div class="col pt-5 mb-2 mx-auto">
   <?php
   $query = "SELECT * FROM `video` WHERE `Video_ID` = ". $id;
   //query om de kanaal te zoeken
@@ -58,10 +57,7 @@
     //loop over de resultaat voor van de resultaten.
     foreach($resultaat as $kanaal)
     {
-      echo "<div class='row justify-content-start'>
-      <a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><img class='img-fluid ml-1 rounded-circle' style='width: 70px; height: 70px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'></a>
-      <a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><h2 class='text-white ml-2 mt-4'>".$kanaal['Naam']."</h2></a>";
-      ?></div></div>
+      ?>
       <?php
       foreach($result as $video)
       {
@@ -73,10 +69,13 @@
         $filepath = $path.$filename;
         $fileExtension = substr($filename, -3);
         //echo de video titel
-        echo "<video autoplay style='width: 100%; height: auto;' poster='uploads/thumbnails/".$video['Thumbnail']."' muted controls>";
+        echo "<video autoplay style='width: 100%; height: auto; margin-top:2%;' poster='uploads/thumbnails/".$video['Thumbnail']."' muted controls>";
           echo "<source src='".$filepath."' type='video/".$fileExtension."'>";
           echo "Your browser doesn't support the video tag!";
         echo "</video>";
+        echo "<div class='row justify-content-start'>
+      <a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><img class='img-fluid ml-1 rounded-circle' style='width: 70px; height: 70px;' src='uploads/profile/".$kanaal['ProfielPhoto']."' alt='Profilephoto for this channel'></a>
+      <a href='kanaal.php?id=". $kanaal['Kanaal_ID'] ."'><h2 class='text-white ml-2 mt-4'>".$kanaal['Naam']."</h2></a></div>";
         echo "<div class='row mt-3 mx-auto'><h3 class='text-white'>".$video['Naam']."</h3>";
         foreach($resultC as $catagorie)
         {
