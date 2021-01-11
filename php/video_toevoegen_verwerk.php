@@ -91,11 +91,21 @@
             $foutmelding .= "<p>ERROR: Something went wrong!</p>";
             echo $foutmelding;
           }
+        //voer de query uit
+        $result = mysqli_query($conn, $query);
+        $uploaded = move_uploaded_file($fileTmpPath, $path);
+        $uploadedThumbnail = move_uploaded_file($fileTmpPathThumbnail, $pathThumbnail);
+
+        if ($result && $uploaded && $uploadedThumbnail){
+
+        if ($result && $uploaded)
+        {
+          header("Location: ../index.php");
         } else
         {
           $foutmelding .= "<p>ERROR: Some of the fields are empty</p>";
           echo $foutmelding;
-        }
+        }}
       } else
       {
         $foutmelding .= "<p>ERROR: The video file you tried to upload is not accepted</p>";
