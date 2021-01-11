@@ -22,12 +22,7 @@ require('php/database.php');
                         <fieldset id="tab011">
                           <div class="bg-light">
                                 <h5 class="text-center mb-4 mt-0 pt-4">Sign in</h5>
-                                <form method="POST" action="php/inlog_verwerk.php">
                                 <form method="POST" action="php/login_verwerk.php">
-                                    <div class="form-group">
-                                      <label>Email</label>
-                                        <input type="mail" name="email" class="form-control" id="email" placeholder="someone45@gmail.com">
-                                    </div>
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input name="username" id="username" class="form-control" placeholder="Peter857" type="text">
