@@ -6,7 +6,7 @@ require 'php/database.php';
     ?>
    <div class="bg-twitch rounded" id="sidebar-wrapper">
          <div class="list-group list-group-flush">
-           <a disabled="disabled" class="list-group-item list-group-item-action text-white bg-dark">Your not subscibed to anyone</a>
+           <a disabled="disabled" class="list-group-item list-group-item-action text-white bg-dark">You need to login to subscribe</a>
          </div>
        </div>
        <?php

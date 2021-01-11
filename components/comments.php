@@ -1,6 +1,6 @@
 <?php
 require 'php/database.php';
-  
+
   if (!isset($_SESSION['username']))
   {
     ?>
@@ -15,31 +15,36 @@ require 'php/database.php';
   {
     $_SESSION['kanaalID'];
     $_SESSION['username'];
-  
+
+    $video = $_GET['id'];
   ?>
-  
+
  <div class="bg-twitch rounded" style="font-size: 0.90rem;" id="sidebar-wrapper">
        <div class="list-group mt-3 list-group-flush">
          <a href="#" disabled class="list-group-item list-group-item-action text-white bg-dark">Comments</a>
+         <form class="comment" action="php/comment_verwerk.php" method="post">
+           <input type="text" style="width: 100%;" name="comment_content">
+           <input type="hidden" style="width: 100%;" value="<?php echo $_SESSION['kanaalID']; ?>" name="commenter">
+           <input type="hidden" style="width: 100%;" value="<?php echo $video; ?>" name="video">
+           <input type="submit" name="comment_submit" value="Post">
+         </form>
   <?php
-  
-  //krijgt de id van de ingelogde kanaal en het kanaal waar je op wilt abonneren
-  $subscriber = $_SESSION['kanaalID'];
-  
-  //de query om ze in de db te zetten als het goed is moet dit gewoon werken.
-  $query = "SELECT * FROM `subscriptions` WHERE KanaalID = '$subscriber'";
+
+  //query voor het vinden van de comments
+  $query = "SELECT * FROM `comments` WHERE VideoID = ". $video;
   $result = mysqli_query($conn, $query);
-  if ($result) 
+  if ($result)
   {
-    while ($subscription = mysqli_fetch_array($result))
+    while ($comment = mysqli_fetch_array($result))
     {
-      $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID = ". $subscription['Subscription'];
-  
+      $queryKanaal = "SELECT * FROM kanaal WHERE Kanaal_ID = ". $comment['KanaalID'];
+
       $resultaat = mysqli_query($conn, $queryKanaal);
-      foreach ($resultaat as $kanaal) 
+      foreach ($resultaat as $kanaal)
       {
         ?>
-          <a href="kanaal.php?id=<?php echo $kanaal['Kanaal_ID']; ?>" class="list-group-item list-group-item-action text-white bg-dark"><?php echo $kanaal['Naam']; ?></a>
+          <em style="color: #efeff1;"> <?php echo $kanaal['Naam']; ?> </em>
+          <p style="color: #efeff1;"> <?php echo $comment['Comment']; ?> </p>
         <?php
       }
     }

@@ -17,9 +17,9 @@
     //krijgt de id van de ingelogde kanaal en het kanaal waar je op wilt abonneren
     $subscriber = $_SESSION['kanaalID'];
     $subscribee = $_POST['kanaalID'];
-
+    
     $foutmelding = "";
-
+    
     //Dit doet het nog niet.
     if ($subscriber == $subscribee)
     {
@@ -29,7 +29,7 @@
     }
 
     //de query om ze in de db te zetten als het goed is moet dit gewoon werken.
-    $query = "DELETE FROM subscriptions WHERE kanaalID = $subscriber AND Subscription = $subscribee";
+    $query = "DELETE FROM `subscriptions` WHERE kanaalID = $subscriber AND Subscription = $subscribee";
 
     $foutmelding = "";
 
@@ -40,7 +40,7 @@
       header("location: ../kanaal.php?id=".$subscribee);
     } else
     {
-      $foutmelding .= "<p>ERROR: Something went wrong!";
+      $foutmelding .= "<p>ERROR: Something wen't wrong!";
       echo $foutmelding;
       exit;
     }
